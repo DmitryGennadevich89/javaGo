@@ -15,7 +15,7 @@ public class Main2 {
         for (int i = 0; i < mas.length; i++) {
             System.out.print(mas[i] + " ");
         }
-        System.out.println("");
+        System.out.println();
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (mas[i] == 0) ? 1 : 0; // если элемент =0, то 0 меняет на 1, в обратном случае - 1 меняет на 0, круто, да?))
             System.out.print(mas[i] + " ");
