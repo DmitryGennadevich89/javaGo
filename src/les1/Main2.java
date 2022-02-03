@@ -6,18 +6,19 @@ public class Main2 {
         ex2();
         ex3();
         ex4();
+        ex5();
+//        ex6();
     }
 
     public static void ex1() {
         int[] mas = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         System.out.println("ex1: ");
-//        int maxMas = mas.length; сначала зачем-то делал через доп переменную, потом удалил
         for (int i = 0; i < mas.length; i++) {
             System.out.print(mas[i] + " ");
         }
         System.out.println();
         for (int i = 0; i < mas.length; i++) {
-            mas[i] = (mas[i] == 0) ? 1 : 0; // если элемент =0, то 0 меняет на 1, в обратном случае - 1 меняет на 0, круто, да?))
+            mas[i] = (mas[i] == 0) ? 1 : 0;
             System.out.print(mas[i] + " ");
         }
     }
@@ -45,7 +46,7 @@ public class Main2 {
         doSomething(mas3);
     }
 
-    static void doSomething(int[] mas3){
+    static void doSomething(int[] mas3) {
         for (int i = 0; i < mas3.length; i++) {
             mas3[i] = (mas3[i] < 6) ? mas3[i] * 2 : mas3[i];
             System.out.print(mas3[i] + " ");
@@ -70,7 +71,7 @@ public class Main2 {
         System.out.println();
         System.out.println("ex4:");
         for (int i = 0; i < mas4.length; i++) {
-            mas4[i] = (int) (Math.round(Math.random() * 200) - 100); // как сгенерировать от -100 до +100? напиши прям здесь строчку
+            mas4[i] = (int) (Math.round(Math.random() * 200) - 100);
             System.out.print(mas4[i] + " ");
         }
         return mas4;
@@ -97,7 +98,57 @@ public class Main2 {
         }
         return maxNum4;
     }
-}
+
+    //    public static void ex5() {               короче, ты мне подсказал с этим:  mas[mas.length-1], но я всё равно до конца не понимаю как оно работает, даже на листочке нарисовал, по шагам прогнал тут в проге, и вроде всё логично, но тем не менее до конца не понял. возьмём как данность.
+//        System.out.println("ex5: ");            а этим способом так не получилось, можешь исправить чтобы заработало? (если это вообще возможно, конечно))
+//
+//        int n = 7;
+//    int[][] mas5 = new int[n][n];
+//        for (int i = 0; i < n; i++) {
+//            mas5[i][i] = 1;
+//            mas5[i][n-i-1] = 1;
+//
+//            }
+//        System.out.println(mas5);
+//        }
+    public static void ex5() {
+        System.out.println("ex5: ");
+        int[][] mas5 = new int[7][7];
+        for (int i = 0; i < mas5.length; i++) {
+            for (int j = 0, n = mas5[i].length - 1; j < mas5[i].length; j++, n--) {
+                if (i == j || i == n) mas5[i][j] = 1;
+                else mas5[i][j] = 0;
+                System.out.print(mas5[i][j] + " ");
+            }
+            System.out.print("\n");
+        }
+    }
+
+//    public static boolean checkBalance(int[] mas6) { не осилю, не шарю((
+//        int lSum = 0;
+//        int rSum = 0;
+//
+//        for (int i = 0; i < mas6.length; i++) {
+//            mas6[i] = (int) (Math.round(Math.random() * 10));
+//            System.out.print(mas6[i] + " ");
+//
+//            lSum += mas6[i];
+//            for (int j = 0; j < mas6.length; j++) {
+//                mas6[j] = (int) (Math.round(Math.random() * 10));
+//                System.out.print(mas6[j] + " ");
+//
+//                rSum += mas6[j];
+//
+//                if (lSum == rSum) {
+//                    return true;
+//                } else {
+//                    return false;
+//                }
+//
+//            }
+//        }
+    }
+
 
 
 
